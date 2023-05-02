@@ -1,9 +1,9 @@
 package com.example.New.Bank.Account.System.Models;
 
-import org.hibernate.annotations.Entity;
+import lombok.Data;
 
 import javax.persistence.*;
-
+@Data
 @Entity
 public class CreditCard {
     @Id

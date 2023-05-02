@@ -1,8 +1,13 @@
 package com.example.New.Bank.Account.System.Models;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
+
+@Data
 @Entity
+@Table(name = "TransactionBank")
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +18,6 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn( name = "account_id",  referencedColumnName = "id")
-
     Account account;
 
     public Integer getId() {

@@ -1,13 +1,17 @@
 package com.example.New.Bank.Account.System.Models;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
-   String customerName;
     Integer id;
+   String customerName;
+
    Integer phoneNumber;
    String email;
 

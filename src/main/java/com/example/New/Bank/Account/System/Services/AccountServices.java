@@ -15,11 +15,15 @@ public class AccountServices {
     @Autowired
     CustomerInterface customerInterface;
 
-    Account account;
-    public void  AccountForAcustomer(Customer customer)  {
 
-        account.getAccountName();
-        account.getId();
-        account.getBalance();
+    //insret Create a new account for a customer.
+    public void  AccountForAcustomer()  {
+    Account account=new Account();
+        account.setAccountName("Bank Muscat");
+        account.setBalance(12.8);
+        Integer id = customerInterface.getCustomerById("Isra");
+        Customer customerId=customerInterface.getStudentByName(id);
+        account.setCustomer(customerId);
+        accountInterface.save(account);
     }
 }

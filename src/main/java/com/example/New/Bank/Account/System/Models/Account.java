@@ -1,13 +1,12 @@
 package com.example.New.Bank.Account.System.Models;
 
 import lombok.Data;
-import org.hibernate.annotations.Entity;
 
 import javax.persistence.*;
-import java.util.function.DoubleUnaryOperator;
 
-@Entity
+
 @Data
+@Entity
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
@@ -17,7 +16,6 @@ public class Account {
    Double balance;
     @ManyToOne
     @JoinColumn( name = "customer_id",  referencedColumnName = "id")
-
     Customer customer;
 
     public Integer getId() {
@@ -28,7 +26,7 @@ public class Account {
         this.id = id;
     }
 
-    public String getAccountName() {
+    public String getAccountName(String s) {
         return AccountName;
     }
 
@@ -36,11 +34,19 @@ public class Account {
         AccountName = accountName;
     }
 
-    public Double getBalance() {
+    public Double getBalance(int i) {
         return balance;
     }
 
     public void setBalance(Double balance) {
         this.balance = balance;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

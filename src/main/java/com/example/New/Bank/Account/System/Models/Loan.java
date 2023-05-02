@@ -1,20 +1,21 @@
 package com.example.New.Bank.Account.System.Models;
 
 import lombok.Data;
-import org.hibernate.annotations.Entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
-@Entity
+
 @Data
+@Entity
 public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     Integer Id;
    String CustomerName;
     Double amount;
-    Data startDate;
-    Data endDate;
+    Date startDate;
+    Date endDate;
     Double balance;
 
     @ManyToOne
@@ -44,20 +45,28 @@ public class Loan {
         this.amount = amount;
     }
 
-    public Data getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Data startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public Data getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Data endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public Double getBalance() {
